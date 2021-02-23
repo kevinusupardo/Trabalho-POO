@@ -122,7 +122,7 @@ class Cliente(Pessoa):
           if self.nome =="":
               raise ValueError
         except ValueError:
-          print ("#########Preencha todos os campos#####")
+          print ("##########Preencha todos os campos##########")
         else:
           break
 
@@ -132,7 +132,7 @@ class Cliente(Pessoa):
           if self.email =="":
               raise ValueError
         except ValueError:
-          print ("#########Preencha todos os campos#########")
+          print ("##########Preencha todos os campos##########")
         else:
           break
 
@@ -143,18 +143,41 @@ class Cliente(Pessoa):
           if self.senha =="":
               raise ValueError
         except ValueError:
-          print ("Preencha todos os campos")
+          print ("Preencha todos os campos.")
         else:
           break
       
       senha2 = getpass.getpass ('Digite sua senha novamente:')
       
-      self.nascimento=input('Data de nascimento: ')
-    
-      self.cpf=input('CPF: ')    
-      
-      self.telefone=input('Telefone:')
-      
+      while True: 
+        try:
+          self.nascimento=input('Data de nascimento:')
+          if self.nascimento =="":
+              raise ValueError
+        except ValueError:
+          print ("Preencha todos os campos.")
+        else:
+          break
+   
+      while True: 
+        try:
+          self.cpf=input('CPF:')
+          if self.cpf =="":
+              raise ValueError
+        except ValueError:
+          print ("Preencha todos os campos.")
+        else:
+          break
+        
+      while True: 
+        try:
+          self.telefone=input('Telefone:')
+          if self.telefone =="":
+              raise ValueError
+        except ValueError:
+          print ("Preencha todos os campos.")
+        else:
+          break
       
       print('\nInforme seu endereço...')
       objendereco.rua=input('Rua: ')
