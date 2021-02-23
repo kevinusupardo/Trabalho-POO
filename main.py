@@ -122,7 +122,7 @@ class Cliente(Pessoa):
           if self.nome =="":
               raise ValueError
         except ValueError:
-          print ("Preencha todos os campos")
+          print ("#########Preencha todos os campos#####")
         else:
           break
 
@@ -132,7 +132,7 @@ class Cliente(Pessoa):
           if self.email =="":
               raise ValueError
         except ValueError:
-          print ("Preencha todos os campos")
+          print ("#########Preencha todos os campos#########")
         else:
           break
 
