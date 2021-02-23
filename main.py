@@ -115,24 +115,53 @@ class Cliente(Pessoa):
   def fazercadastro(self,objendereco):
     while True:
       print('\nCADASTRE-SE\n')
-      self.nome=input('Nome: ')
-      email=input('Email: ')
-      self.email=email
-      senha=getpass.getpass('Digite sua senha: ')
-      self.senha=senha
+
+      while True: 
+        try:
+          self.nome = input('Nome: ')
+          if self.nome =="":
+              raise ValueError
+        except ValueError:
+          print ("Preencha todos os campos")
+        else:
+          break
+
+      while True: 
+        try:
+          self.email = input('Email: ')
+          if self.email =="":
+              raise ValueError
+        except ValueError:
+          print ("Preencha todos os campos")
+        else:
+          break
+
+      while True: 
+        try:
+          senha=getpass.getpass('Digite sua senha: ')
+          self.senha=senha
+          if self.senha =="":
+              raise ValueError
+        except ValueError:
+          print ("Preencha todos os campos")
+        else:
+          break
+      
       senha2 = getpass.getpass ('Digite sua senha novamente:')
-      nascimento=input('Data de nascimento: ')
-      self.nascimento=nascimento
-      cpf=input('CPF: ')    
-      self.cpf=cpf
-      telefone=input('Telefone:')
-      self.telefone=telefone
+      
+      self.nascimento=input('Data de nascimento: ')
+    
+      self.cpf=input('CPF: ')    
+      
+      self.telefone=input('Telefone:')
+      
+      
       print('\nInforme seu endereço...')
       objendereco.rua=input('Rua: ')
       objendereco.numero=input('Nº:')
       objendereco.bairro=input('Bairro: ')
       if senha == senha2:
-        self.listaemail.append(email)
+        self.listaemail.append(self.email)
         self.listasenha.append(senha)
         print(f'\nSeu cadastro está pronto {self.nome}!\nFaça seu login:\n\n......CONVENIÊNCIA.HAYVIN......\n')
         break
